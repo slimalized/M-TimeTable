@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "M-TimeTable",
+    "version": "1.0",
+    "description": "Place links to each course on Tsukuba University's Manaba in a timetable format.",
+    "content_scripts": [
+        {
+            "js": ["content.js"],
+            "css": ["style/style.css"],
+            "matches": ["https://manaba.tsukuba.ac.jp/ct/home*"]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "icons": {
+        "16": "extension-icons/icon-16x16.png",
+        "48": "extension-icons/icon-48x48.png",
+        "128": "extension-icons/icon-128x128.png"
+    },
+    "web_accessible_resources" : [{
+        "resources" : ["notice-icons/*"],
+        "matches" : ["<all_urls>"]
+    }]
+}
