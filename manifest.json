@@ -7,7 +7,7 @@
         {
             "js": ["content.js"],
             "css": ["style/style.css"],
-            "matches": ["*://manaba.tsukuba.ac.jp/*"]
+            "matches": ["https://manaba.tsukuba.ac.jp/ct/home*"]
         }
     ],
     "permissions": [
