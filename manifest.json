@@ -13,9 +13,6 @@
     "permissions": [
         "storage"
     ],
-    "host_permissions": [
-        "*://manaba.tsukuba.ac.jp/*"
-    ],
     "icons": {
         "16": "extension-icons/icon-16x16.png",
         "48": "extension-icons/icon-48x48.png",
