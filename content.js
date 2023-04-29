@@ -1,3 +1,5 @@
+const browser = require("webextension-polyfill");
+
 const storage = ((key) => ({
     save(value) { localStorage.setItem(key, JSON.stringify(value)) },
     load() { return localStorage.getItem(key) && JSON.parse(localStorage.getItem(key)) },
@@ -120,7 +122,7 @@ const create_notification_imgs_list = (icon_img_HTMLCollection) => {
         class_list: (Boolean(notification.title)) ? ["has_notification"] : [],
         alt: type_arr[i],
         title: type_arr[i],
-        src: chrome.runtime.getURL(`notice-icons/${type_arr[i]}.svg`)
+        src: browser.runtime.getURL(`notice-icons/${type_arr[i]}.svg`)
     }));
 }
 

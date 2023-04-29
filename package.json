@@ -1,0 +1,21 @@
+{
+  "name": "m-timetable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "webextension-polyfill": "^0.10.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^3.21.1"
+  }
+}

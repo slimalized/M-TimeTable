@@ -7,11 +7,14 @@
         {
             "js": ["content.js"],
             "css": ["style/style.css"],
-            "matches": ["https://manaba.tsukuba.ac.jp/ct/home*"]
+            "matches": ["*://manaba.tsukuba.ac.jp/*"]
         }
     ],
     "permissions": [
         "storage"
+    ],
+    "host_permissions": [
+        "*://manaba.tsukuba.ac.jp/*"
     ],
     "icons": {
         "16": "extension-icons/icon-16x16.png",
