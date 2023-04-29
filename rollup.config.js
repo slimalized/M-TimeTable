@@ -6,7 +6,7 @@ export default {
     input: "content.js",
     output: {
         file: "dist/content.js",
-        format: "esm"
+        format: "iife",
     },
     plugins: [
         copy({
