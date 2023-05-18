@@ -10,9 +10,6 @@
             "matches": ["https://manaba.tsukuba.ac.jp/ct/home*"]
         }
     ],
-    "permissions": [
-        "storage"
-    ],
     "icons": {
         "16": "extension-icons/icon-16x16.png",
         "48": "extension-icons/icon-48x48.png",
