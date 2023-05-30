@@ -23,6 +23,11 @@ const create_element = HTML_tag => (props = {}) =>{
 
     return element;
 };
+const get_language = () => {
+    const mylang = document.getElementById("mylang").innerText;
+    return mylang == "English" ? "ja" : "en"; 
+};
+const lang = get_language();
 const ce_a = create_element("a");
 const ce_div = create_element("div");
 const ce_img = create_element("img");
@@ -45,7 +50,7 @@ const create_module_selector = () => {
                     }),
                 ],
                 htmlFor: module,
-                innerText: module.replace("Spr-", "春").replace("Aut-", "秋"),
+                innerText: lang == "ja" ? module.replace("Spr-", "春").replace("Aut-", "秋") : module,
             })),
     });
 };
@@ -86,7 +91,7 @@ const create_main = () => {
         id: "m-timetable-main",
         children_list: [
             create_timetable_label("time-label", ["1", "2", "3", "4", "5", "6"]),
-            create_timetable_label("week-label", ["月", "火", "水", "木", "金"]),
+            create_timetable_label("week-label", lang == "ja" ? ["月", "火", "水", "木", "金"] : ["Mon", "Tue", "Wed", "Thu", "Fri"]),
             ce_div({id: "timetable"}),
         ],
     });
