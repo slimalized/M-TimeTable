@@ -102,7 +102,7 @@ const create_timetable = arr =>{
         children_list: [
             create_option_bar(arr),
             create_main(),
-            ce_div({id: "m-timetable-sub"}),
+            ce_div({id: "m-timetable-sub", class_list: [lang=="en" && "m-timetable-sub-en"]}),
         ],
     });
 }
@@ -226,6 +226,14 @@ const update_courses = course_arr =>{
 
 const format_schedule = schedule_str => {
     const obj = {};
+    let schedule_str_original = schedule_str;
+    if (lang == "en") {
+        const keywords_en = ["Spring ", "Autumn ", "Mon. ", "Tue. ", "Wed. ", "Thu. ", "Fri. ", ", "];
+        const keywords_ja = ["春", "秋", "月", "火", "水", "木", "金", "、"];
+        for (let i = 0; i < keywords_en.length; i++) {
+            schedule_str = schedule_str.replace(keywords_en[i], keywords_ja[i]);
+        }
+    }
     schedule_str.split(/(?=春|秋)/).forEach(str =>{
         const season
             = (str.match(/[春秋]/) == "春") ? "Spr"
@@ -250,7 +258,7 @@ const format_schedule = schedule_str => {
     });
     return (Object.keys(obj).length)
         ? obj
-        : schedule_str;
+        : schedule_str_original;
 };
 
 window.addEventListener("load", () => {
