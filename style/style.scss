@@ -381,4 +381,7 @@
         border-radius: 4px;
         box-shadow: var(--box-shadow);
     }
+    &.m-timetable-sub-en:not(:empty)::before{
+        content: "Others";
+    }
 }
