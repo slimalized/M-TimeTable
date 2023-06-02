@@ -34,7 +34,6 @@
   color: var(--color-black);
   box-sizing: border-box;
   position: relative;
-  text-align: justify;
   overflow-wrap: break-word;
   line-break: normal;
   line-height: 1.4;
