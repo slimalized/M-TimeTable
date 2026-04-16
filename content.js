@@ -24,8 +24,8 @@ const create_element = HTML_tag => (props = {}) =>{
     return element;
 };
 const get_language = () => {
-    const mylang = document.getElementById("mylang").innerText;
-    return mylang == "English" ? "ja" : "en"; 
+    const is_ja = document.querySelector(".mylang-ja");
+    return is_ja ? "ja" : "en"; 
 };
 const lang = get_language();
 const ce_a = create_element("a");
