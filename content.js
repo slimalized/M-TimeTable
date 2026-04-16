@@ -118,16 +118,23 @@ const remove_courses = ()=>{
     };
 };
 
-const create_notification_imgs_list = (icon_img_HTMLCollection) => {
-    const type_arr = ["news", "task", "result", "comment", "individual"];
-    return [...icon_img_HTMLCollection]
-    .map((notification,i) => ce_img({
-        class_list: (Boolean(notification.title)) ? ["has_notification"] : [],
-        alt: type_arr[i],
-        title: type_arr[i],
-        src: chrome.runtime.getURL(`notice-icons/${type_arr[i]}.svg`)
-    }));
-}
+const create_notification_imgs_list = (icon_img_HTMLCollection, courceurl) => {
+  const type_arr = ["news", "task", "result", "comment", "individual"],
+    links = ["_news", "", "_grade", "_topics", "_coursecollection_user"];
+    return [...icon_img_HTMLCollection].map((notification, i) =>
+    ce_a({
+      href: courceurl + links[i],
+      children_list: [
+        ce_img({
+          class_list: Boolean(notification.title) ? ["has_notification"] : [],
+          alt: type_arr[i],
+          title: type_arr[i],
+          src: chrome.runtime.getURL(`notice-icons/${type_arr[i]}.svg`),
+        }),
+      ],
+    })
+  );
+};
 
 const create_course_schedule = course => {
     return ce_p({
@@ -144,7 +151,7 @@ const create_course_title = course => {
 const create_course_notice = course => {
     return ce_div({
         class_list: ["notice"],
-        children_list: create_notification_imgs_list(course.notice)
+        children_list: create_notification_imgs_list(course.notice, course.url),
     });
 }
 const create_course = placable => course => {
